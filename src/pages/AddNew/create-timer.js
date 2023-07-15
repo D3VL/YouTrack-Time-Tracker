@@ -3,7 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 
 function CreateTimer() {
 
-    const { project, issue } = useParams();
+    const { issue } = useParams();
     const navigate = useNavigate();
 
     const [warning, setWarning] = React.useState(null);
@@ -54,8 +54,6 @@ function CreateTimer() {
     }
 
 
-
-    const [createEnabled, setCreateEnabled] = React.useState(false);
     const summaryField = React.useRef(null);
 
     const getStartTime = () => {
@@ -100,7 +98,7 @@ function CreateTimer() {
         const summary = summaryField.current.value;
 
         try {
-            const newTimer = await window.yt.createTimer(issue, YTTStr, summary);
+            await window.yt.createTimer(issue, YTTStr, summary);
             navigate(`/`);
         } catch (e) {
             console.log(e);
@@ -162,7 +160,7 @@ function CreateTimer() {
 
                 <div className="mb-6">
                     <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Notes / Reason</label>
-                    <input ref={summaryField} onChange={(e) => { setCreateEnabled(e.target.value.length > 3) }} type="text" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+                    <input ref={summaryField} type="text" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
                 </div>
 
                 <button onClick={doCreateTimer} className="p-4 w-full bg-green-600 text-white font-bold py-2 px-4 rounded hover:bg-green-700"> Create </button>

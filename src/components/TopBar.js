@@ -52,10 +52,10 @@ function TopBar() {
                                             <Link onClick={setMenuOpen.bind(null, !menuOpen)} to="/" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Home</Link>
                                         </li>
                                         <li>
-                                            <a onClick={setMenuOpen.bind(null, !menuOpen)} href={window.yt.userUrl + `/timesheets?author=me`} target="_blank" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">My Timesheet</a>
+                                            <a onClick={setMenuOpen.bind(null, !menuOpen)} href={window.yt.userUrl + `/timesheets?author=me`} target="_blank" rel="noreferrer" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">My Timesheet</a>
                                         </li>
                                         <li>
-                                            <a onClick={setMenuOpen.bind(null, !menuOpen)} href={window.yt.userUrl} target="_blank" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Open YouTrack</a>
+                                            <a onClick={setMenuOpen.bind(null, !menuOpen)} href={window.yt.userUrl} target="_blank" rel="noreferrer" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Open YouTrack</a>
                                         </li>
                                         <li>
                                             <Link onClick={setMenuOpen.bind(null, !menuOpen)} to="/configure" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</Link>
@@ -63,15 +63,15 @@ function TopBar() {
                                     </ul>
 
                                     <div className="py-1">
-                                        <a onClick={() => {
+                                        <button onClick={() => {
                                             setMenuOpen.bind(null, !menuOpen);
                                             window.storage.clear();
                                             window.location = window.location.origin + '/index.html'
-                                        }} href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign out</a>
+                                        }} className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign out</button>
                                     </div>
 
                                     <div className="py-1">
-                                        <a href="https://d3vl.com/" target="_blank" className="font-bod block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">
+                                        <a href="https://d3vl.com/" target="_blank" rel="noreferrer" className="font-bod block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">
                                             Visit <span style={{ color: '#ff3e3e' }}>D3VL</span>
                                         </a>
                                     </div>

@@ -4,8 +4,6 @@ import YouTrackAPI from '../../YouTrackAPI';
 
 function Configure() {
 
-    const [saveEnabled, setSaveEnabled] = React.useState(false);
-
     const baseUrlRef = React.useRef(null);
     const tokenRef = React.useRef(null);
     const userUrlRef = React.useRef(null);

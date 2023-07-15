@@ -69,11 +69,11 @@ function PreviousTimers() {
                     <div className="flex items-center justify-between align-middle">
 
                         <div className="flex items-center">
-                            <a href={window.yt.userUrl + '/projects/' + workItem.issue.project.id} target="_blank" className="flex flex-col mr-5">
+                            <a href={window.yt.userUrl + '/projects/' + workItem.issue.project.id} target="_blank" rel="noreferrer" className="flex flex-col mr-5">
                                 <span className="text-sm font-medium text-gray-400">Project</span>
                                 <span className="text-sm text-gray-600 dark:text-white">{workItem.issue.project.name}</span>
                             </a>
-                            <a href={window.yt.userUrl + '/issue/' + workItem.issue.idReadable} target="_blank" className="flex flex-col mr-5">
+                            <a href={window.yt.userUrl + '/issue/' + workItem.issue.idReadable} target="_blank" rel="noreferrer" className="flex flex-col mr-5">
                                 <span className="text-sm font-medium text-gray-400">Issue</span>
                                 <span className="text-sm text-gray-600 dark:text-white">{workItem.issue.idReadable}</span>
                             </a>

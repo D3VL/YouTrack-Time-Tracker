@@ -46,7 +46,6 @@ class Store {
 
 
 class ChromeExtensionStore extends Store {
-    constructor() { super() }
 
     async load() {
         return new Promise((resolve, reject) => {
@@ -96,7 +95,6 @@ class ChromeExtensionStore extends Store {
 
 
 class WebStore extends Store {
-    constructor() { super() }
 
     async load() {
         return new Promise((resolve) => {

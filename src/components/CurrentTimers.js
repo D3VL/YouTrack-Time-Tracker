@@ -7,8 +7,7 @@ function CurrentTimers() {
 
     const [workItems, setWorkItems] = React.useState([]);
     const [timerValues, setTimerValues] = React.useState({});
-    const timers = {};
-
+    // const timers = {};
     const loadWorkItems = async () => {
         const currentUser = await window.yt.getCurrentUser();
 
@@ -20,7 +19,7 @@ function CurrentTimers() {
             let startedAt = new Date(parseInt(`1${workItem.yttData.active}0000`));
             if (startedAt > new Date()) startedAt = new Date();
 
-            timers[workItem.id] = startedAt
+            // timers[workItem.id] = startedAt
             tmpTimerValues[workItem.id] = getReadableTimeSince(startedAt);
 
             return {
@@ -74,11 +73,11 @@ function CurrentTimers() {
                     <hr className="my-4 border-gray-200 dark:border-gray-700" />
 
                     <div className="flex items-center">
-                        <a href={window.yt.userUrl + '/projects/' + workItem.issue.project.id} target="_blank" className="flex flex-col mr-5">
+                        <a href={window.yt.userUrl + '/projects/' + workItem.issue.project.id} target="_blank" rel="noreferrer" className="flex flex-col mr-5">
                             <span className="text-sm font-medium text-gray-400">Project</span>
                             <span className="text-sm text-gray-600 dark:text-white">{workItem.issue.project.name}</span>
                         </a>
-                        <a href={window.yt.userUrl + '/issue/' + workItem.issue.idReadable} target="_blank" className="flex flex-col mr-5">
+                        <a href={window.yt.userUrl + '/issue/' + workItem.issue.idReadable} target="_blank" rel="noreferrer" className="flex flex-col mr-5">
                             <span className="text-sm font-medium text-gray-400">Issue</span>
                             <span className="text-sm text-gray-600 dark:text-white">{workItem.issue.idReadable}</span>
                         </a>

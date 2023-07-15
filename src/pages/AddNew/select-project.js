@@ -26,7 +26,7 @@ function SelectProject() {
                 {projects.map(project => (
                     <Link to={"/add-new/" + project.shortName} key={project.id}>
                         <div className="hover:bg-gray-300 dark:hover:bg-gray-600 w-100 flex justify-between items-center border-gray-200 dark:border-gray-700 cursor-pointer rounded">
-                            <div scope="row" className="flex items-center px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                            <div className="flex items-center px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
 
                                 <img className="w-12 h-12 rounded" src={window.yt.baseUrl + project.iconUrl} alt="Project Logo" />
 

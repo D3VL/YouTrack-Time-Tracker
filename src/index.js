@@ -52,7 +52,7 @@ import TopBar from './components/TopBar';
             </Routes>
 
             <div className="py-1 h-8">
-                <a href="https://d3vl.com/" target="_blank" className="block px-4 py-2 text-sm text-gray-300 dark:text-gray-200 text-center fixed bottom-0 w-full bg-gray-600 dark:bg-gray-800">
+                <a href="https://d3vl.com/" target="_blank" rel="noreferrer" className="block px-4 py-2 text-sm text-gray-300 dark:text-gray-200 text-center fixed bottom-0 w-full bg-gray-600 dark:bg-gray-800">
                     <span className="font-bold" style={{ color: '#ff3e3e' }}>D3VL</span> - Software That Rocks
                 </a>
             </div>
