@@ -21,7 +21,7 @@ jobs:
       - name: Build Extension
         run: npm run build
       - name: Zip Extension
-        run: zip -r ${{github.ref_name}}.zip ./build/*
+        run: cd build && zip -r ../${{github.ref_name}}.zip ./ && cd ..
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
