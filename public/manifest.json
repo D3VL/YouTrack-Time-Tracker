@@ -1,0 +1,23 @@
+{
+    "manifest_version": 3,
+    "version": "=version=",
+    "name": "YouTrack Timer",
+    "action": {
+        "default_icon": {
+            "16": "images/16x16_light.png",
+            "48": "images/48x48_light.png",
+            "128": "images/128x128_light.png"
+        },
+        "default_title": "YouTrack Timer",
+        "default_popup": "index.html"
+    },
+    "permissions": [
+        "storage"
+    ],
+    "optional_host_permissions": [
+        "https://*/*"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    }
+}
