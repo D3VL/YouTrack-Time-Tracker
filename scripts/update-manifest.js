@@ -1,14 +1,19 @@
 const fs = require("fs");
 const path = require("path");
 
-const manifest = path.join(__dirname, "../public/manifest.json");
+const updateVersion = (file, version) => {
+    const filePath = path.join(__dirname, file);
 
-const manifestJson = require(manifest);
+    const json = JSON.parse(fs.readFileSync(filePath, "utf8"));
 
-manifestJson.version = process.argv[2];
+    json.version = version;
 
-const json = JSON.stringify(manifestJson, null, 4);
+    const output = JSON.stringify(json, null, 4);
 
-fs.writeFileSync(manifest, json);
+    fs.writeFileSync(filePath, output);
 
-console.log("Updated manifest.json with version " + process.argv[2]);
+    console.log(`Updated ${file.split('/').pop()} with version ${version}`);
+}
+
+updateVersion("../public/manifest.json", process.argv[2]);
+updateVersion("../package.json", process.argv[2]);
